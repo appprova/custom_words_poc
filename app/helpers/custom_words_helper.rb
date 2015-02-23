@@ -1,7 +1,7 @@
 module CustomWordsHelper
 
 	def custom key
-		CustomWord.where(key: key.to_s, user: current_user).first.word
+		CustomWord.fetch_cache_word(key, current_user.id)
 	end
 
 end
