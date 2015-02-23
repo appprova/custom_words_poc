@@ -1,0 +1,29 @@
+<h1>Listing custom_words</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Word</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @custom_words.each do |custom_word| %>
+      <tr>
+        <td><%= custom_word.key %></td>
+        <td><%= custom_word.word %></td>
+        <td><%= custom_word.user_id %></td>
+        <td><%= link_to 'Show', custom_word %></td>
+        <td><%= link_to 'Edit', edit_custom_word_path(custom_word) %></td>
+        <td><%= link_to 'Destroy', custom_word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Custom word', new_custom_word_path %>
